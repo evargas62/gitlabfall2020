@@ -796,13 +796,18 @@ int main(void)
 					break;
 
 			}
-			 case 8:
-                        {
+                         case 8:
+                    {
+				srand(time(NULL));
+				int i;
+				int game;
+				int dice_roll;
+				int *ptr;
+				
                                         while(choice != 99)
                                         {
-                                                        puts("Erick Vargas' Door\n"); //I'll remove this once we submit the final product, it's just a reminder for me
                                                         puts("You enter door 8 and you find yourself on a tropical island. You see a small group of people running around collecting materials, what do you do?\n");
-                                                        printf("1) Introduce yourself 2) Ask where you are 3) Just watch them 4) Ignore them 5) Try to avoid them\n");
+                                                        printf("1) Introduce yourself 2) Ask where you are 3) Just watch them 4) Try to avoid them\n");
                                                         scanf("%d",&choice);
                                                         switch(choice)
                                                         {
@@ -811,8 +816,169 @@ int main(void)
                                                                         while(choice != 99)
                                                                         {
                                                                                 puts("You walk up to them and introduce yourself to them, they happily greet you and introduce themselves to you. They ask where you are from, how do you respond?\n");
-                                                                                printf(" choose \n"); //prompt choices about how to answer.
+                                                                                printf("1) Respond honestly 2) Lie to them \n");
                                                                                 scanf("%d",&choice);
+
+										switch(choice)
+										{
+											case 1:
+											{
+												while(choice != 99)
+												{
+													puts("You tell them that you just walked into a door and ended up at the island. They looked at you confusingly but shortly forget about it and continue talking to you.\n");
+													puts("After talking with them for a while you ask where you are at and they tell you the name of the island you're on is called Destiny Island. Shortly after telling you the girl in the group pulls the other two boys away for a second to talk to them. You start to wonder what they're talking about. Do you interrupt them while they're discussing?\n");
+													puts("1) Yes 2) No\n");
+													scanf("%d",&choice);
+
+														switch(choice)
+														{
+															case 1:
+															{
+																while(choice != 99)
+																{
+																	puts("You interrupt their discussion just to find out what they're talking about, they turn to look at you but then go back to talking amongst themselves. You saw that they looked a bit upset that you interrupted them. After finishing their discussion they just say their goodbyes and walk away.\n");
+																	puts("You watch as they leave and you're left alone on the island. What do you do next?\n");
+																	puts("1) Follow the group 2) Explore\n");
+																	scanf("%d",&choice);
+
+																	switch(choice)
+																	{
+																		case 1:
+																		{
+																			while(choice != 99)
+																			{
+																				puts("You choose to follow the group. One of the boys turns and notice you following them and they inform the other two in the group that you're following them. They start to sprint away, you sprint with them to try to catch up. They all splint in different directions and you lose them shortly.\n");
+																				puts("Right after losing them you notice that you got lost in a forest, what do you do?");
+																				puts("1) Find a place to rest 2) Find your way back\n");
+																				scanf("%d",&choice);
+
+																				switch(choice)
+																				{
+																					case 1:
+																					{
+																						while(choice != 99)
+																						{
+																							puts("You chose to just find a place to rest. After searching for a while you find a small cave to take shelter in while the sun begins to set. After such a series of events unfolded, you fall asleep.\n");
+																							puts("You wake up the next morning and begin to wonder what to do next.\n");
+																							puts("1) Look for the group of people 2) Look for supplies\n");
+																							scanf("%d",&choice);
+
+																							switch(choice)
+																							{
+																								case 1:
+																								{
+																										puts("You choose to go look for the group of people you met yesterday. You spend most of the day trying to locate but to no avail. You give up the search and try to make your way back to the cave. You think you find the right cave but unfortunaltely you stumbled into a cave full of ravenous canine creatures. Within seconds you are surrounded and unfortunately your story came to an end...\n");
+
+																										return EXIT_SUCCESS;
+																								}
+
+																								case 2:
+																								{
+																										puts("You choose to go look for supplies. After spending most of the day looking for supplies you start to realize that living in an island doesn't sound so bad to you. Come the end of the day you decide to just live your life on the island.\n");
+																										puts("Adventure end.");
+
+																										return EXIT_SUCCESS;
+																								}
+																							}
+																						}
+																					}
+
+																					case 2:
+																					{
+																							puts("You choose to just try to find your way back to where you started. As you try to make your way back you notice that the sun is starting to set quickly. You try to find a way out of the forest but the more you stumble around the more you get lost. You start to hear the forest come alive with different creature sounds and lots of rustling. You notice some sounds get closer and louder and before you realize it you're surrounded by some odd canine creatures.\n");
+																							puts("The creatures continuously circle around you until they all jump and attack you. Unfortunately your story comes to an end...");
+																							return EXIT_SUCCESS;
+																					}
+																				}
+																			}
+																			break;
+																		}
+																		case 2:
+																		{
+																				puts("You choose to just explore around the island a bit before the sun starts to set. You find an unoccupied hut near by and go in to get some rest. The next morning you begin to realize that living a life on the island doesn't sound so bad. Come the end of the day you decide to just live your life on the island with the hut being your main home on the island.\n");
+																				puts("Adventure end.");
+
+																				return EXIT_SUCCESS;
+																		}
+																	}
+																	break;
+																}
+															}
+															
+															case 2:
+															{
+																while(choice != 99)
+																{
+																	puts("You don't interrupt their discuss and wait until they finish. Once they had finished their discussion they asked if you wanted to play a quick game. You ask what kind of game and they just said a quick over/under dice game. They say if you win they'll let you in on a project they're working on but if you lose then you can't let you join.\n");
+																	puts("Do you agree to play their game?\n");
+																	puts("1) Yes 2) No\n");
+																	scanf("%d",&choice);
+
+																	switch(choice)
+																	{
+																		case 1:
+																		{
+																			while(choice != 99)
+																			{
+																				puts("You agree to play their game. The older boy of the group begins to shake the dice in their hand, he asks you to answer over or under 6.\n");
+																				puts("1) Over 2) Under\n");
+																				scanf("%d",&choice);
+																				
+																				switch(choice)
+																				{
+																				case 1:
+																				{
+																					for(i = 0; i < 13; i++)
+																					{
+																						dice_roll = 2 + rand()%12;
+																						if(dice_roll >= 6)
+																						{
+																							puts("it was under 6.\n");
+																							puts("The group says they're sorry but they can't let you in on their project. They do take you back to their village where they live and they give you a small hut to live in. You make yourself at home and eventually fall asleep. The next morning you begin to think about living your life on the island and after much consderation you decide to just live out your life in the island.\n");
+																							puts("Adventure end.");
+
+																							return EXIT_SUCCESS;
+																						}
+																					}
+																				}
+
+																				case 2:
+																				{
+																					for(i = 0; i < 13; i++)
+                                                                                                                                                                        {
+                                                                                                                                                                               	dice_roll = 2 + rand()%12;
+                                                                                                                                                                               	if(dice_roll < 6)
+                                                                                                                                                                               	{
+                                                                                                                                                                                        puts("it was over 6.\n");
+																							puts("The group cheers for your victory. As your reward they inform you of the project they're working on. They tell you that they're trying to build a raft to use to discover new places in the world. You tell them its a great idea and offer to help with no hesitation. They all get excited and they take you along to collect materials. You spend the rest of your days collecting materials and helping them build the raft. Once completed you join them on many journeys across the ocean to discover new lands.\n");
+																							puts("Adventure end.");
+
+																							return EXIT_SUCCESS;
+																						}
+																					}
+																				}
+																				}
+																				break;
+																			}
+																		}
+
+																		case 2:
+																		{
+																			puts("You don't agree to play their game. The group gets bummed out that you don't agree to play but they understand. They offer to take you back to their village where they live and they give you a small hut to live in. You make yourself at home and eventually fall asleep. The next morning you begin to think about living your life on the island and after much consderation you decide to just live out your life in the island.\n");
+                                                                                                                                                        puts("Adventure end.");
+
+																			return EXIT_SUCCESS;
+																		}
+																	}
+																}
+															}
+														}
+													}
+																																	
+
+																							}
+
+
                                                                         }
                                                                         break;
                                                                 }
@@ -821,18 +987,54 @@ int main(void)
                                                                         while(choice != 99)
                                                                         {
                                                                                 puts("You walk up to them and ask where you are, they look at you confusingly and tell you that the island your on is named Destiny Island. Still looking confused they ask where you came from, how do you respond?");
-                                                                                printf(" choose \n"); //prompt choices about how to answer.
+                                                                                printf("1) Lie to them 2) Say it doesn't matter \n");
                                                                                 scanf("%d",&choice);
-                                                                        }
-                                                                        break;
+
+										switch(choice)
+										{
+											case 1:
+											{
+												puts("You chose to lie to the group and say that you're from the other side of the island. The group now becomes very hesistant to be around you. You realize your lie didn't work since you had just asked where you were. The group stays quiet and leave quickly. You're left alone and you decide to explore the island. You find a hut that was not being used and you decide to spend the night there. The next morning you decided you no longer cared to return home and decided to just stay on the island for the rest of your life.");
+												puts("Adventure end");
+
+												return EXIT_SUCCESS;
+											}
+											case 2:
+											{
+												puts("You get aggressive with the group and tell them it doesn't matter where you came from. They get startled and eventually run away together. You ignore them and begin to explore around. You eventually find a hut that was not being used so you decide to stay there the night. As you're about to go to bed you hear a large group of people start to approach the area and you suddenly see the group holding spears and torches. They surround the hut and force you to get out of the hut. They accuse you of harming the group you got aggresive with and take you as a prisoner. You were taken back to the village jail where they decided to execute you for being an outsider and causing harm to their village. Unfortunately your story comes to an end...");
+
+												return EXIT_SUCCESS;
+											}
+										}
+									}
+                                                                       	break;
                                                                 }
+									
                                                                 case 3:
                                                                 {
                                                                         while(choice != 99)
                                                                         {
                                                                                 puts("From a distance you stay watching them, you just see that they continue running around collecting materials for some reason. As you keep watching them you notice that once they huddled up the girl of the group starts marking off on a checklist. You start to wonder more what they're trying to do, what do you do?");
-                                                                                printf(" choose \n"); //prompt choices about what to do.
+                                                                                printf("1) Approach them 2) Keep your distance \n");
                                                                                 scanf("%d",&choice);
+
+										switch(choice)
+										{
+											case 1:
+											{
+												puts("You approach the group and ask if they need any help collecting any materials. The group looks at you confusingly and refuse your help, shortly after the walk away. You're left alone and you decide to explore the island. You find a hut that was not being used and you decide to spend the night there. The next morning you decided you no longer cared to return home and decided to just stay on the island for the rest of your life.\n");
+												puts("Adventure end.");
+
+												return EXIT_SUCCESS;
+											}
+											case 2:
+											{
+												puts("You continue to keep your distance and keep watching the group as they collect materials. Eventually the group leaves but they also left behind the paper the girl was checking off. You walk up to the group of materials and grab the list, you discover that they're collecting materials to build a raft. There are only a couple of items left so you run around to collect the last materials and begin to build a craft. You work on it all night and as the sun begins to rise you finish building the raft. Before anyone comes back you hurry it into the water and begin to explore the open world. You stumble upon multiple lands but none of them were from where you came from. You've come to accept the fact that you wouldn't return so you just choose one of the many places you stumbled upon and live out the rest of your life.\n");
+												puts("Adventure end.");
+
+												return EXIT_SUCCESS;
+											}
+										}
                                                                         }
                                                                         break;
                                                                 }
@@ -840,19 +1042,37 @@ int main(void)
                                                                 {
                                                                         while(choice != 99)
                                                                         {
-                                                                                puts("You decide to just ignore them, what do you do instead?");
-                                                                                printf(" choose \n"); //prompt choices about what to do instead
-                                                                                scanf("%d",&choice);
-                                                                        }
-                                                                        break;
-                                                                }
-                                                                case 5:
-                                                                {
-                                                                        while(choice != 99)
-                                                                        {
                                                                                 puts("Panicked, you decide to hide from them. Where do you choose to hide?");
-                                                                                printf(" choose \n"); //prompt choices of where to hide
+                                                                                printf("1) Behind a rock 2) Behind some bushes 3) In a nearby Cave 4) Hide in the water \n");
                                                                                 scanf("%d",&choice);
+
+										switch(choice)
+										{
+											case 1:
+											{
+												puts("You chose to hide behind a big rock that was conveniently near by. You notice the group are staring over at the rock you're hiding behind and you suddenly hear a gasp. You look over the rock to see them running away, you're left confused as to why they're running. Suddenly the rock begins to shake and you're unable to move due to the tremors. A rock golem fully forms and you're left in shock. Unfortunately you were unable to move from the shock the the rock golem squishes you. Your story comes to an end...");
+
+												return EXIT_SUCCESS;
+											}
+											case 2:
+											{
+												puts("You chose to hide behind some near by bushes. You notice the group is still minding their own business until they all walk away. You let out a sigh of relief before your whole body suddenly goes numb. Apparently the bush you hide behind was a poisonous plant the left you paralyzed. You hear rustling near by and within seconds some canine creatures jump out of the bushes and surround your body. They quickly jump to attack you, unfortunately your story comes to an end...");
+
+												return EXIT_SUCCESS;
+											}
+											case 3:
+											{
+												puts("You chose to hide in a near by cave. It was a bit far from where the group was at but you're still able to see them. You notice the group is still minding their own business until they all walk away. You let out a sigh of relief before and immediately after felt the breath of another creature right above you. You quickly turn to find a sasquatch like monster but in an instant it grabs you and takes you further into the cave. It hangs you upside down along with what looked like decomposed bodies of past victims, you realize that unfortunately there would be no escaping this cave. You story comes to an end...");
+
+												return EXIT_SUCCESS;
+											}
+											case 4:
+											{
+												puts("You chose to hide in the water. The water was a bit cold but nothing you couldn't handle and it seemed to be very unsteady. You notice that the group is still minding their own business until they all walk away. By the time the group left the waves grew stronger until you were eventually sucked further away from shore. You try to swim back but the waves kept pulling you back until you grew tired and gave up. Unfortunately you were sucked so far out and into an area that was infested with sharks. The sharks unfortunately attack you and your story comes to an end...");
+
+												return EXIT_SUCCESS;
+											}
+										}
                                                                         }
                                                                         break;
                                                                 }
@@ -860,6 +1080,9 @@ int main(void)
                                                         break;
                                         }
                         }
+			
+
+			}
 			case 9:
 			{
 					while(choice != 99)
